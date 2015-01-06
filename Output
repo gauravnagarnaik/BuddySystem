@@ -1,0 +1,312 @@
+Enter size of memory : 2000
+
+1. Load Process
+2. Remove Process
+3. Tree Structure
+4. Exit
+Enter Your Choice : 1
+
+Enter Process Size : 20
+
+Successful Allocation!!
+
+1. Load Process
+2. Remove Process
+3. Tree Structure
+4. Exit
+Enter Your Choice : 3
+
+Memory Structure =>
+2000 -- Divided
+        1000 -- Divided
+                500 -- Divided
+                        250 -- Divided
+                                125 -- Divided
+                                        62 -- Divided
+                                                31 -- Allocated : 20
+                                                31 -- Free
+                                        62 -- Free
+                                125 -- Free
+                        250 -- Free
+                500 -- Free
+        1000 -- Free
+
+1. Load Process
+2. Remove Process
+3. Tree Structure
+4. Exit
+Enter Your Choice : 1
+
+Enter Process Size : 35
+
+Successful Allocation!!
+
+1. Load Process
+2. Remove Process
+3. Tree Structure
+4. Exit
+Enter Your Choice : 3
+
+Memory Structure =>
+2000 -- Divided
+        1000 -- Divided
+                500 -- Divided
+                        250 -- Divided
+                                125 -- Divided
+                                        62 -- Divided
+                                                31 -- Allocated : 20
+                                                31 -- Free
+                                        62 -- Allocated : 35
+                                125 -- Free
+                        250 -- Free
+                500 -- Free
+        1000 -- Free
+
+1. Load Process
+2. Remove Process
+3. Tree Structure
+4. Exit
+Enter Your Choice : 1
+
+Enter Process Size : 90
+
+Successful Allocation!!
+
+1. Load Process
+2. Remove Process
+3. Tree Structure
+4. Exit
+Enter Your Choice : 3
+
+Memory Structure =>
+2000 -- Divided
+        1000 -- Divided
+                500 -- Divided
+                        250 -- Divided
+                                125 -- Divided
+                                        62 -- Divided
+                                                31 -- Allocated : 20
+                                                31 -- Free
+                                        62 -- Allocated : 35
+                                125 -- Allocated : 90
+                        250 -- Free
+                500 -- Free
+        1000 -- Free
+
+1. Load Process
+2. Remove Process
+3. Tree Structure
+4. Exit
+Enter Your Choice : 1
+
+Enter Process Size : 40
+
+Successful Allocation!!
+
+1. Load Process
+2. Remove Process
+3. Tree Structure
+4. Exit
+Enter Your Choice : 3
+
+Memory Structure =>
+2000 -- Divided
+        1000 -- Divided
+                500 -- Divided
+                        250 -- Divided
+                                125 -- Divided
+                                        62 -- Divided
+                                                31 -- Allocated : 20
+                                                31 -- Free
+                                        62 -- Allocated : 35
+                                125 -- Allocated : 90
+                        250 -- Divided
+                                125 -- Divided
+                                        62 -- Allocated : 40
+                                        62 -- Free
+                                125 -- Free
+                500 -- Free
+        1000 -- Free
+
+1. Load Process
+2. Remove Process
+3. Tree Structure
+4. Exit
+Enter Your Choice : 1
+
+Enter Process Size : 240
+
+Successful Allocation!!
+
+1. Load Process
+2. Remove Process
+3. Tree Structure
+4. Exit
+Enter Your Choice : 3
+
+Memory Structure =>
+2000 -- Divided
+        1000 -- Divided
+                500 -- Divided
+                        250 -- Divided
+                                125 -- Divided
+                                        62 -- Divided
+                                                31 -- Allocated : 20
+                                                31 -- Free
+                                        62 -- Allocated : 35
+                                125 -- Allocated : 90
+                        250 -- Divided
+                                125 -- Divided
+                                        62 -- Allocated : 40
+                                        62 -- Free
+                                125 -- Free
+                500 -- Divided
+                        250 -- Allocated : 240
+                        250 -- Free
+        1000 -- Free
+
+1. Load Process
+2. Remove Process
+3. Tree Structure
+4. Exit
+Enter Your Choice : 2
+
+Enter Process Size : 40
+
+Deallocation Successful!!
+
+1. Load Process
+2. Remove Process
+3. Tree Structure
+4. Exit
+Enter Your Choice : 3
+
+Memory Structure =>
+2000 -- Divided
+        1000 -- Divided
+                500 -- Divided
+                        250 -- Divided
+                                125 -- Divided
+                                        62 -- Divided
+                                                31 -- Allocated : 20
+                                                31 -- Free
+                                        62 -- Allocated : 35
+                                125 -- Allocated : 90
+                        250 -- Free
+                500 -- Divided
+                        250 -- Allocated : 240
+                        250 -- Free
+        1000 -- Free
+
+1. Load Process
+2. Remove Process
+3. Tree Structure
+4. Exit
+Enter Your Choice : 2
+
+Enter Process Size : 20
+
+Deallocation Successful!!
+
+1. Load Process
+2. Remove Process
+3. Tree Structure
+4. Exit
+Enter Your Choice : 3
+
+Memory Structure =>
+2000 -- Divided
+        1000 -- Divided
+                500 -- Divided
+                        250 -- Divided
+                                125 -- Divided
+                                        62 -- Free
+                                        62 -- Allocated : 35
+                                125 -- Allocated : 90
+                        250 -- Free
+                500 -- Divided
+                        250 -- Allocated : 240
+                        250 -- Free
+        1000 -- Free
+
+1. Load Process
+2. Remove Process
+3. Tree Structure
+4. Exit
+Enter Your Choice : 2
+
+Enter Process Size : 90
+
+Deallocation Successful!!
+
+1. Load Process
+2. Remove Process
+3. Tree Structure
+4. Exit
+Enter Your Choice : 3
+
+Memory Structure =>
+2000 -- Divided
+        1000 -- Divided
+                500 -- Divided
+                        250 -- Divided
+                                125 -- Divided
+                                        62 -- Free
+                                        62 -- Allocated : 35
+                                125 -- Free
+                        250 -- Free
+                500 -- Divided
+                        250 -- Allocated : 240
+                        250 -- Free
+        1000 -- Free
+
+1. Load Process
+2. Remove Process
+3. Tree Structure
+4. Exit
+Enter Your Choice : 2
+
+Enter Process Size : 35
+
+Deallocation Successful!!
+
+1. Load Process
+2. Remove Process
+3. Tree Structure
+4. Exit
+Enter Your Choice : 3
+
+Memory Structure =>
+2000 -- Divided
+        1000 -- Divided
+                500 -- Free
+                500 -- Divided
+                        250 -- Allocated : 240
+                        250 -- Free
+        1000 -- Free
+
+1. Load Process
+2. Remove Process
+3. Tree Structure
+4. Exit
+Enter Your Choice : 2
+
+Enter Process Size : 240
+
+Deallocation Successful!!
+
+1. Load Process
+2. Remove Process
+3. Tree Structure
+4. Exit
+Enter Your Choice : 3
+
+Memory Structure =>
+2000 -- Free
+
+1. Load Process
+2. Remove Process
+3. Tree Structure
+4. Exit
+Enter Your Choice : 4
+Press any key to continue . . .
