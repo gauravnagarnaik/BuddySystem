@@ -1,0 +1,210 @@
+//Standard Headers
+#include<iostream>
+#include<vector>
+
+
+//Class BuddyS
+class BuddyS{
+public:
+	//Function Declarations
+	void segment_alloc(int, int);
+	void make_divide(int);
+	void make_free(int);
+	void print(int, int);
+	int place(int);
+	int power(int, int);
+	int tree[2050];
+	int i = 0;
+
+};
+
+
+//Function for Allocation
+void BuddyS::segment_alloc(int total_size, int request){
+	int file_level = 0;
+	int size = total_size;
+	tree[0] = 0;
+	
+	if (request > total_size){
+	std::cout << "\nSystem does not have enough memory!!!" << std::endl;
+	
+	}
+	while (1){
+			if (request < size && request >(size / 2))
+				break;
+			else{
+				size = size / 2;
+				file_level++;
+		
+		}
+		
+	}
+	for (i = (power(2, file_level) - 1); i <= (power(2, file_level + 1) - 2); i++){
+		if (tree[i] == 0 && place(i)){
+			tree[i] = request;
+			make_divide(i);
+			std::cout << "\nSuccessful Allocation!!" << std::endl;
+			break;
+			
+		}
+			
+		int mid = (power(2, file_level + 1) - 1);
+		if (i == mid){
+			std::cout << "\nSystem does not have enough free memory!" << std::endl;
+			
+		}
+	
+	}
+	
+}
+
+
+//Function for Position
+int BuddyS::place(int node){
+	while (node != 0){
+		node = node % 2 == 0 ? (node - 1) / 2 : node / 2;
+		if (tree[node] > 1)
+			return 0;
+	
+	}
+	return 1;
+
+}
+
+
+//Function for Dividing memory
+void BuddyS::make_divide(int node){
+	while (node != 0){
+		node = node % 2 == 0 ? (node - 1) / 2 : node / 2;
+		tree[node] = 1;
+		
+	}
+
+}
+
+
+//Function for Deallocaton
+void BuddyS::make_free(int request){
+	int node = 0;
+	while (1){
+		if (tree[node] == request)
+			break;
+		else
+			node++;
+			
+	}
+	tree[node] = 0;
+	while (node != 0){
+		if (tree[node % 2 == 0 ? node - 1 : node + 1] == 0 && tree[node] == 0){
+			tree[node % 2 == 0 ? (node - 1) / 2 : node / 2] = 0;
+			node = node % 2 == 0 ? (node - 1) / 2 : node / 2;
+			
+		}
+		else
+			break;
+		
+	}
+	std::cout << "\nDeallocation Successful!!" << std::endl;
+	
+}
+
+
+//Function to compute power of 2
+int BuddyS::power(int x, int y){
+	int z, ans;
+	if (y == 0)
+		return 1;
+		
+	ans = x;
+	for (z = 1; z < y; z++){
+		ans *= x;
+		
+	}
+	return ans;
+	
+}
+
+
+//Function to display
+void BuddyS::print(int total_size, int node){
+	int permission = 0, l_limit, u_limit, tab;
+	if (node == 0)
+		permission = 1;
+	else if (node % 2 == 0)
+		permission = tree[(node - 1) / 2] == 1 ? 1 : 0;
+	else
+		permission = tree[(node / 2)] == 1 ? 1 : 0;
+	if (permission){
+		l_limit = u_limit = tab = 0;
+		while (1){
+			if (node >= l_limit && node <= u_limit)
+				break;
+			else{
+				tab++;
+				std::cout << "\t";
+				l_limit = u_limit + 1;
+				u_limit = 2 * u_limit + 2;
+				
+			}
+			
+		}
+		std::cout << (total_size / power(2, tab));
+		if (tree[node] > 1)
+			std::cout << " -- Allocated : " << tree[node] << std::endl;
+		else if (tree[node] == 1)
+			std::cout << " -- Divided" << std::endl;
+		else
+			std::cout << " -- Free" << std::endl;
+		print(total_size, 2 * node + 1);
+		print(total_size, 2 * node + 2);
+		
+	}
+	
+}
+
+
+//Main Function
+int main(){
+	int total_size, choice, required;
+	BuddyS BS;
+	std::cout << "\nEnter size of memory : ";
+	std::cin >> total_size;
+	for (int j = 0; j < total_size; j++)
+	BS.tree[j] = 0;
+	do{
+		std::cout << "\n1. Load Process\n2. Remove Process\n3. Tree Structure\n4. Exit" << std::endl;
+		std::cout << "Enter Your Choice : ";
+		std::cin >> choice;
+		switch (choice){
+			case 1:
+				std::cout << "\nEnter Process Size : ";
+				std::cin >> required;
+				BS.segment_alloc(total_size, required);
+				break;
+				
+			case 2:
+				std::cout << "\nEnter Process Size : ";
+				std::cin >> required;
+				BS.make_free(required);
+				break;
+				
+			case 3:
+				std::cout << "\nMemory Structure => " << std::endl;
+				BS.print(total_size, 0);
+				break;
+				
+			case 4:
+				break;
+				
+			default:
+				std::cout << "Enter Correct Option!!!" << std::endl;
+				break;
+				
+		}
+
+	} while (choice != 4);
+	
+	system("Pause");
+	return 0;
+
+}
